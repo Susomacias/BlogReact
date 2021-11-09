@@ -5,6 +5,7 @@ import SignInForm from '../components/froms/SigninForm';
 import {useDispatch} from 'react-redux';
 import validator from 'validator';
 import { isObjEmpty } from '../helpers/helpers';
+import { loginUser } from '../actions/authActions';
 
 
 export default function SignIn() {
@@ -32,6 +33,14 @@ export default function SignIn() {
       setErrors(errors);
       return;
     }
+
+    dispatch(loginUser({email, password}))
+    .then(response =>{
+
+    }).catch(err => {
+      
+    });
+
   }
   return (
     <Container className="mt-5">
